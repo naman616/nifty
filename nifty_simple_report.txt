@@ -1,0 +1,77 @@
+
+======================================================================
+           NIFTY 50 ANALYSIS - SIMPLE REPORT
+======================================================================
+Date: 04 March 2026, 11:24 AM
+======================================================================
+
+>>> TODAY'S PRICE <<<
+----------------------------------------------------------------------
+Current Price:  Rs. 24,391.35
+Yesterday:      Rs. 24,865.70
+Change:         Rs. -474.35 (-1.91%) [-]
+
+Today market is: DOWN
+
+>>> MARKET TREND (Direction) <<<
+----------------------------------------------------------------------
+Status: STRONG DOWNWARD TREND
+What this means: Market is moving DOWN strongly
+Signal Color: RED
+
+>>> PRICE LEVELS (Last 20 days) <<<
+----------------------------------------------------------------------
+Highest Price:  Rs. 26,009.40  <-- RESISTANCE (hard to cross)
+Current Price:  Rs. 24,391.35
+Lowest Price:   Rs. 24,305.40  <-- SUPPORT (strong base)
+
+>>> IS NIFTY EXPENSIVE OR CHEAP? <<<
+----------------------------------------------------------------------
+RSI Value: 23.2
+Status: CHEAP
+Explanation: Market might be low - could be a good time to buy
+
+Note: RSI above 70 = Expensive | RSI below 30 = Cheap
+
+>>> RECOMMENDATION <<<
+======================================================================
+ACTION: SELL or WAIT
+ADVICE: Not a good time to invest, or book profits
+RISK LEVEL: MEDIUM TO HIGH
+======================================================================
+
+>>> WHAT SHOULD YOU DO? <<<
+----------------------------------------------------------------------
+1. Market might go down soon
+2. If you have invested, consider booking some profit
+3. Don't invest new money right now
+4. Wait for market to become cheaper
+
+>>> AVERAGE PRICES (Moving Averages) <<<
+----------------------------------------------------------------------
+20-Day Average: Rs. 25,547.63
+50-Day Average: Rs. 25,666.77
+
+What this means:
+  Current price is BELOW short-term average (Negative sign)
+
+======================================================================
+IMPORTANT THINGS TO REMEMBER:
+======================================================================
+1. Stock market can be risky - never invest money you can't afford to lose
+2. This is just analysis - always talk to a financial expert
+3. Don't invest all your money at once - invest in small parts (SIP)
+4. Past performance doesn't guarantee future results
+5. Do your own research before investing
+======================================================================
+
+>>> WORD MEANINGS (Glossary) <<<
+----------------------------------------------------------------------
+NIFTY 50     = Top 50 companies in Indian stock market
+RSI          = Shows if market is expensive or cheap
+TREND        = Direction where market is moving
+SUPPORT      = Price level where market usually doesn't fall below
+RESISTANCE   = Price level where market usually struggles to cross
+SMA          = Simple Moving Average (average price over days)
+======================================================================
+
