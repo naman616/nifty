@@ -1,0 +1,83 @@
+
+======================================================================
+           BITCOIN ANALYSIS - SIMPLE REPORT
+======================================================================
+Date: 05 March 2026, 06:09 PM
+======================================================================
+
+>>> TODAY'S PRICE <<<
+----------------------------------------------------------------------
+Current Price:  $72,799.49
+Yesterday:      $72,710.58
+Change:         $+88.91 (+0.12%) [+]
+
+Today Bitcoin is: UP
+
+>>> BITCOIN TREND (Direction) <<<
+----------------------------------------------------------------------
+Status: SIDEWAYS
+What this means: Bitcoin is NOT moving much (stable)
+Signal Color: YELLOW
+
+>>> PRICE LEVELS (Last 20 days) <<<
+----------------------------------------------------------------------
+Highest Price:  $74,051.80  <-- RESISTANCE (hard to cross)
+Current Price:  $72,799.49
+Lowest Price:   $62,553.19  <-- SUPPORT (strong base)
+
+>>> IS BITCOIN EXPENSIVE OR CHEAP? <<<
+----------------------------------------------------------------------
+RSI Value: 63.7
+Status: FAIR PRICE
+Explanation: Bitcoin is at normal levels
+
+Note: RSI above 70 = Expensive | RSI below 30 = Cheap
+
+>>> RECOMMENDATION <<<
+======================================================================
+ACTION: WAIT AND WATCH
+ADVICE: Better to wait for clearer signals
+RISK LEVEL: MEDIUM TO HIGH
+======================================================================
+
+>>> WHAT SHOULD YOU DO? <<<
+----------------------------------------------------------------------
+1. Bitcoin market is confused - no clear direction
+2. Better to wait and watch
+3. Don't rush to invest
+4. Wait for clearer signals
+5. Crypto markets change very fast!
+
+>>> AVERAGE PRICES (Moving Averages) <<<
+----------------------------------------------------------------------
+20-Day Average: $67,862.53
+50-Day Average: $75,878.49
+
+What this means:
+  Current price is ABOVE short-term average (Positive sign)
+
+======================================================================
+IMPORTANT THINGS TO REMEMBER ABOUT BITCOIN:
+======================================================================
+1. Bitcoin is EXTREMELY RISKY and VOLATILE - prices swing wildly!
+2. Only invest money you can afford to LOSE COMPLETELY
+3. This is just analysis - NOT financial advice
+4. Bitcoin can drop 20-30% in a single day
+5. Never invest borrowed money or life savings in crypto
+6. Do extensive research before investing
+7. Crypto markets operate 24/7 - very fast-moving
+8. Consider talking to a financial advisor
+======================================================================
+
+>>> WORD MEANINGS (Glossary) <<<
+----------------------------------------------------------------------
+BITCOIN (BTC) = The first and most popular cryptocurrency
+RSI          = Shows if Bitcoin is expensive or cheap
+TREND        = Direction where Bitcoin price is moving
+SUPPORT      = Price level where Bitcoin usually doesn't fall below
+RESISTANCE   = Price level where Bitcoin usually struggles to cross
+SMA          = Simple Moving Average (average price over days)
+VOLATILITY   = How much the price swings up and down
+CRYPTO       = Digital currency (like Bitcoin, Ethereum)
+======================================================================
+
