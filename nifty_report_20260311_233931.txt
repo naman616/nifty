@@ -1,0 +1,68 @@
+
+======================================================================
+                   NIFTY 50 — TREND ANALYSIS REPORT                   
+======================================================================
+  Date  : 11 March 2026, 11:39 PM
+  Score : -1.0  (≥2 Bullish | ≤-1.5 Bearish | else Neutral)
+======================================================================
+
+  PRICE SUMMARY
+----------------------------------------------------------------------
+  Current            ₹   23,866.85
+  Previous Close     ₹   24,261.60
+  Change             ₹     -394.75  (-1.63%)  ▼ DOWN
+
+  TREND & MOVING AVERAGES
+----------------------------------------------------------------------
+  Trend   : Strong Downtrend  [Strong]
+  SMA 20-day         ₹   25,174.98
+  SMA 50-day         ₹   25,486.01
+
+  MOMENTUM INDICATORS
+----------------------------------------------------------------------
+  RSI (14)      : 23.26  → Oversold
+  MACD          : -397.77  |  Signal: -243.36  |  Hist: -154.41
+  MACD Status   : Bearish Crossover
+  Stoch RSI     : 4.0  → Oversold
+
+  VOLATILITY (BOLLINGER BANDS)
+----------------------------------------------------------------------
+  Upper Band         ₹   26,471.62
+  Current            ₹   23,866.85
+  Lower Band         ₹   23,878.34
+  BB Position   : -0.4%  → Near Lower Band
+  ATR (14-day)  : ₹390.97  (expected daily range)
+
+  SUPPORT & RESISTANCE  (last 20 sessions)
+----------------------------------------------------------------------
+  Resistance         ₹   26,009.40  ← ceiling
+  Current            ₹   23,866.85
+  Support            ₹   23,697.80  ← floor
+
+  VOLUME
+----------------------------------------------------------------------
+  Ratio vs 20-day avg : 0.00×
+
+======================================================================
+                             RECOMMENDATION                           
+======================================================================
+  ACTION     : HOLD/WATCH
+  RISK LEVEL : Medium
+======================================================================
+
+  SUGGESTIONS
+----------------------------------------------------------------------
+  [~] Composite score -1.0 — mixed signals
+  [W] Range ₹23,697.80 – ₹26,009.40
+  [>] Wait for MACD histogram or RSI to confirm direction
+  [i] RSI oversold — watch for bounce
+  [v] Price hugging lower Bollinger Band — potential mean-reversion
+  [v] Volume 0.0× average — low conviction, treat move cautiously
+
+======================================================================
+  DISCLAIMER
+----------------------------------------------------------------------
+  • For educational purposes only — not financial advice.
+  • Consult a SEBI-registered advisor before investing.
+  • Never invest funds you cannot afford to lose.
+======================================================================
