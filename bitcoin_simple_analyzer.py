@@ -25,11 +25,9 @@ def fetch_bitcoin_data(days=100):
 
 def calculate_indicators(df):
     """Calculate all the technical indicators"""
-    # Simple Moving Averages (average prices)
-    df['SMA_20'] = df['Close'].rolling(window=20).mean()  # 20-day average
-    df['SMA_50'] = df['Close'].rolling(window=50).mean()  # 50-day average
+    df['SMA_20'] = df['Close'].rolling(window=20).mean()  
+    df['SMA_50'] = df['Close'].rolling(window=50).mean()  
     
-    # RSI (shows if Bitcoin is expensive or cheap)
     delta = df['Close'].diff()
     gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
     loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
