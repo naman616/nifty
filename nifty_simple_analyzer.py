@@ -311,7 +311,7 @@ def build_report_lines(r: dict) -> list[str]:
         f"  RISK LEVEL: {r['risk']}",
         clr(SEP, CYAN),
 
-        # ── Action steps ──
+        
         "",
         clr("  SUGGESTED NEXT STEPS", BOLD),
         DASH,
@@ -340,7 +340,7 @@ def build_report_lines(r: dict) -> list[str]:
             "  4. Wait for RSI to move decisively above 50 (bullish) or below 40 (bearish)",
         ]
 
-    # ── Disclaimer ──
+    
     lines += [
         "",
         clr(SEP, CYAN),
