@@ -120,7 +120,6 @@ def _score(df: pd.DataFrame) -> dict:
     support  = float(recent["Low"].min())
     resist   = float(recent["High"].max())
 
-    # ── Trend (weight ×2)
     if price > sma20 > sma50:
         trend, t_str, t_score = "Strong Uptrend",       "Strong",   +2
     elif price > sma20 and price > sma50:
@@ -132,29 +131,24 @@ def _score(df: pd.DataFrame) -> dict:
     else:
         trend, t_str, t_score = "Sideways",             "Weak",      0
 
-    # ── RSI (weight ×1)
     if rsi > 70:    rsi_lbl, rsi_score = "Overbought",  -1
     elif rsi < 30:  rsi_lbl, rsi_score = "Oversold",    +1
     else:           rsi_lbl, rsi_score = "Neutral",      0
 
-    # ── MACD (weight ×1 + histogram flip bonus)
     if macd > msig and macd > 0:    macd_lbl, macd_score = "Bullish Crossover", +1
     elif macd < msig and macd < 0:  macd_lbl, macd_score = "Bearish Crossover", -1
     else:                           macd_lbl, macd_score = "Neutral",             0
-    if mhist > 0 and mhist_prev < 0:   macd_score += 0.5   # fresh bullish flip
-    elif mhist < 0 and mhist_prev > 0: macd_score -= 0.5   # fresh bearish flip
+    if mhist > 0 and mhist_prev < 0:   macd_score += 0.5   
+    elif mhist < 0 and mhist_prev > 0: macd_score -= 0.5   
 
-    # ── Stochastic RSI (weight ×0.5)
     if stoch > 80:    stoch_lbl, stoch_score = "Overbought", -0.5
     elif stoch < 20:  stoch_lbl, stoch_score = "Oversold",   +0.5
     else:             stoch_lbl, stoch_score = "Neutral",      0
 
-    # ── Bollinger Band position (weight ×0.5)
     if bb_pct > 90:     bb_lbl, bb_score = "Near Upper Band", -0.5
     elif bb_pct < 10:   bb_lbl, bb_score = "Near Lower Band", +0.5
     else:               bb_lbl, bb_score = "Inside Bands",     0
 
-    # ── Volume confirmation (weight ×0.5)
     vol_score = 0.3 if vr > 1.3 and t_score > 0 else (-0.3 if vr > 1.3 and t_score < 0 else 0)
 
     total = t_score + rsi_score + macd_score + stoch_score + bb_score + vol_score
@@ -186,7 +180,6 @@ def build_analysis(df: pd.DataFrame) -> dict:
     else:
         action, risk = "HOLD/WATCH", "Medium"
 
-    # Build suggestion list
     tips = []
     if action == "BUY":
         tips += [
