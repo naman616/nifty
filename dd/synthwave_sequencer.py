@@ -31,7 +31,7 @@ import pygame.sndarray
 
 # ── Audio constants ───────────────────────────────────────────────────────────
 SAMPLE_RATE = 44100
-CHANNELS    = 1        # mono
+CHANNELS    = 1        
 BIT_DEPTH   = 16
 AMP         = 28000
 
@@ -79,7 +79,7 @@ def synth_note(note: str, dur=0.25) -> np.ndarray:
     freq = NOTES[note]
     n    = int(SAMPLE_RATE * dur)
     t    = np.linspace(0, dur, n, endpoint=False)
-    # Slightly detuned double oscillator for that retro synth warmth
+   
     osc  = (np.sin(2 * math.pi * freq * t) * 0.6
           + np.sin(2 * math.pi * freq * 1.005 * t) * 0.4)
     env  = np.exp(-5 * t)
@@ -97,7 +97,7 @@ LABEL_C   = (220, 200, 255)
 # ── Layout ────────────────────────────────────────────────────────────────────
 W, H      = 780, 460
 STEPS     = 8
-ROWS      = 4                    # kick, snare, hihat, melody
+ROWS      = 4                    
 ROW_NAMES = ["KICK", "SNARE", "HIHAT", "SYNTH"]
 CELL_W    = 68
 CELL_H    = 60
