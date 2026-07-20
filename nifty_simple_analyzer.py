@@ -292,7 +292,7 @@ def build_report_lines(r: dict) -> list[str]:
         f"  Band Width   : {r['bb_width']:.1f}%",
         f"  Price is     : {r['bb_pos']}",
 
-        # ── ATR & Volume ──
+        
         "",
         clr("  VOLATILITY & VOLUME", BOLD),
         DASH,
@@ -301,7 +301,7 @@ def build_report_lines(r: dict) -> list[str]:
         f"  20-day Avg    : {r['vol_avg']:,.0f}",
         f"  Volume Signal : {r['vol_comment']}",
 
-        # ── Recommendation ──
+        
         "",
         clr(SEP, CYAN),
         clr(f"  {'RECOMMENDATION':^68}", BOLD),

@@ -54,7 +54,6 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     """Compute all indicators in one function — avoids repeated passes over data."""
     c, h, l, v = df["Close"], df["High"], df["Low"], df["Volume"]
 
-    # Moving averages
     df["SMA_20"] = c.rolling(20).mean()
     df["SMA_50"] = c.rolling(50).mean()
     ema12 = c.ewm(span=12, adjust=False).mean()
@@ -62,35 +61,29 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["EMA_12"] = ema12
     df["EMA_26"] = ema26
 
-    # RSI-14
     delta = c.diff()
     gain  = delta.clip(lower=0).rolling(14).mean()
     loss  = (-delta.clip(upper=0)).rolling(14).mean()
     df["RSI"] = 100 - (100 / (1 + gain / loss.replace(0, np.nan)))
 
-    # MACD
     df["MACD"]      = ema12 - ema26
     df["MACD_Sig"]  = df["MACD"].ewm(span=9, adjust=False).mean()
     df["MACD_Hist"] = df["MACD"] - df["MACD_Sig"]
 
-    # Bollinger Bands
     std20           = c.rolling(20).std()
     df["BB_Mid"]    = df["SMA_20"]
     df["BB_Upper"]  = df["BB_Mid"] + 2 * std20
     df["BB_Lower"]  = df["BB_Mid"] - 2 * std20
     df["BB_Pct"]    = (c - df["BB_Lower"]) / (df["BB_Upper"] - df["BB_Lower"]) * 100
 
-    # ATR-14 (volatility proxy)
     tr             = pd.concat([h - l, (h - c.shift()).abs(), (l - c.shift()).abs()], axis=1).max(axis=1)
     df["ATR"]      = tr.rolling(14).mean()
 
-    # Stochastic RSI (3-period smoothed)
     rsi_min        = df["RSI"].rolling(14).min()
     rsi_max        = df["RSI"].rolling(14).max()
     stoch_raw      = (df["RSI"] - rsi_min) / (rsi_max - rsi_min).replace(0, np.nan) * 100
     df["StochRSI"] = stoch_raw.rolling(3).mean()
 
-    # Volume trend
     df["Vol_SMA20"] = v.rolling(20).mean()
     df["Vol_Ratio"] = v / df["Vol_SMA20"]
 
