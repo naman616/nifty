@@ -33,9 +33,7 @@ plt.savefig('/mnt/user-data/outputs/example2_ma.png', dpi=300, bbox_inches='tigh
 print("Chart saved: example2_ma.png")
 plt.close()
 
-# ============================================
-# EXAMPLE 3: Full Technical Analysis
-# ============================================
+
 print("\n\nEXAMPLE 3: Full technical analysis with all indicators")
 print("="*50)
 
@@ -47,9 +45,7 @@ plt.savefig('/mnt/user-data/outputs/example3_full.png', dpi=300, bbox_inches='ti
 print("Chart saved: example3_full.png")
 plt.close()
 
-# ============================================
-# EXAMPLE 4: Pattern Recognition
-# ============================================
+
 print("\n\nEXAMPLE 4: Candlestick pattern detection")
 print("="*50)
 
@@ -57,9 +53,6 @@ patterns = analyzer.identify_patterns()
 for pattern in patterns:
     print(f"• {pattern}")
 
-# ============================================
-# EXAMPLE 5: Different Stocks
-# ============================================
 print("\n\nEXAMPLE 5: Analyzing multiple stocks")
 print("="*50)
 
@@ -72,9 +65,7 @@ for ticker in tickers:
     print(f"  Latest Close: {summary['Latest Close']}")
     print(f"  Volume: {summary['Volume']}")
 
-# ============================================
-# EXAMPLE 6: Intraday Analysis (if available)
-# ============================================
+
 print("\n\nEXAMPLE 6: Intraday analysis (5-minute intervals)")
 print("="*50)
 
