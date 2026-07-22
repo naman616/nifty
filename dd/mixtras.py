@@ -1,5 +1,5 @@
 engine = pyttsx3.init()
 rate = engine.getProperty('rate')
-engine.setProperty('rate', 150)  # Slower
+engine.setProperty('rate', 150)  
 engine.say("This is slower speech.")
 engine.runAndWait()
