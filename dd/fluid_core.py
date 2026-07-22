@@ -84,7 +84,6 @@ def spiky_grad(rx, ry, r):
 def visc_lap(r):
     return np.where(r < H_RADIUS, VISC_COEF * (H_RADIUS - r), 0)
 
-# ── Particle system ────────────────────────────────────────────────────────────
 class FluidSim:
     def __init__(self):
         self.reset()
