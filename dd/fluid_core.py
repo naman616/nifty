@@ -132,7 +132,6 @@ class FluidSim:
 
         self.age += DT
 
-        # ── Density & pressure ──────────────────────────────────────
         den = np.zeros(n, np.float32)
         for i in range(n):
             dx = self.px - self.px[i]
@@ -142,12 +141,11 @@ class FluidSim:
         den = np.maximum(den, 0.001)
         pre = GAS_CONST * (den - REST_DENSITY)
 
-        # ── Forces ──────────────────────────────────────────────────
         fx = np.zeros(n, np.float32)
         fy = np.zeros(n, np.float32)
 
         for i in range(n):
-            dx  = self.px[i] - self.px        # shape (n,)
+            dx  = self.px[i] - self.px        
             dy  = self.py[i] - self.py
             r2  = dx*dx + dy*dy
             r   = np.sqrt(r2)
@@ -204,7 +202,7 @@ def density_to_color(d, vel_mag, age, palette):
     c0, c1, c2 = palette
     t = min(1.0, d / (REST_DENSITY * 2.0))
     v = min(1.0, vel_mag / 300.0)
-
+#whatever it takes you to do it 
     if t < 0.5:
         r = int(c0[0] + (c1[0]-c0[0]) * t * 2)
         g = int(c0[1] + (c1[1]-c0[1]) * t * 2)
