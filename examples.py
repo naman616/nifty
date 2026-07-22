@@ -6,9 +6,6 @@ Shows how to use the StockAnalyzer class
 from stock_analyzer import StockAnalyzer
 import matplotlib.pyplot as plt
 
-# ============================================
-# EXAMPLE 1: Basic Analysis
-# ============================================
 print("EXAMPLE 1: Analyzing AAPL stock")
 print("="*50)
 
@@ -19,9 +16,6 @@ summary = analyzer.get_summary()
 for key, value in summary.items():
     print(f"{key}: {value}")
 
-# ============================================
-# EXAMPLE 2: Chart with Moving Averages
-# ============================================
 print("\n\nEXAMPLE 2: Chart with moving averages")
 print("="*50)
 

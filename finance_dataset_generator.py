@@ -49,7 +49,6 @@ def calculate_technical_indicators(df):
     df['MACD_Signal'] = df['MACD'].ewm(span=9, adjust=False).mean()
     df['MACD_Histogram'] = df['MACD'] - df['MACD_Signal']
     
-    # Bollinger Bands
     df['BB_Middle'] = df['Close'].rolling(window=20).mean()
     df['BB_Std'] = df['Close'].rolling(window=20).std()
     df['BB_Upper'] = df['BB_Middle'] + (2 * df['BB_Std'])
@@ -62,8 +61,7 @@ def calculate_technical_indicators(df):
     high_14 = df['High'].rolling(window=14).max()
     df['Stochastic_K'] = 100 * (df['Close'] - low_14) / (high_14 - low_14)
     df['Stochastic_D'] = df['Stochastic_K'].rolling(window=3).mean()
-    
-    # ATR (Average True Range) - Volatility
+
     df['TR'] = np.maximum(
         df['High'] - df['Low'],
         np.maximum(
