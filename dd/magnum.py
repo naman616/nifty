@@ -1,2 +1,2 @@
-magnum = 2;
+magnum = 69;
 print(magnum)
