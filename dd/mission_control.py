@@ -34,7 +34,7 @@ import ephem
 # ── Layout ─────────────────────────────────────────────────────────────────────
 W, H      = 1100, 700
 MAP_X, MAP_Y, MAP_W, MAP_H = 20, 20, 680, 360
-STAR_X, STAR_Y, STAR_R     = 820, 220, 160   # star map centre + radius
+STAR_X, STAR_Y, STAR_R     = 820, 220, 160   
 PANEL_X                    = 720
 FPS                        = 30
 
@@ -58,7 +58,6 @@ RED        = (255,  60,  60)
 PANEL_BG   = ( 8,  16,  14)
 BORDER     = ( 20,  80,  55)
 
-# ── Brightest named stars (RA hrs, Dec deg, magnitude, name) ───────────────────
 STARS = [
     (6.752, -16.716, -1.46, "Sirius"),    (6.399, 28.026, 0.08, "Capella"),
     (5.242, 45.998,  0.12, "Rigel"),      (7.655,  5.225,  0.34, "Procyon"),
@@ -75,7 +74,6 @@ STARS = [
     (19.846, 8.868,   0.77, "Altair"),   (5.438,-57.473,   1.68, "Regor"),
 ]
 
-# ── ISS live fetch (background thread) ─────────────────────────────────────────
 iss_data = {"lat": 0.0, "lon": 0.0, "alt_km": 408.0, "ok": False}
 _iss_lock = threading.Lock()
 
