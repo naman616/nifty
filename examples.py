@@ -1,7 +1,3 @@
-"""
-Simple Stock Analysis Example
-Shows how to use the StockAnalyzer class
-"""
 
 from stock_analyzer import StockAnalyzer
 import matplotlib.pyplot as plt
@@ -11,7 +7,6 @@ print("="*50)
 
 analyzer = StockAnalyzer('AAPL', period='3mo', interval='1d')
 
-# Get summary statistics
 summary = analyzer.get_summary()
 for key, value in summary.items():
     print(f"{key}: {value}")
