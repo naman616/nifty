@@ -230,7 +230,7 @@ def draw_hud(surf, sim, pal_name, paused, fonts):
     font_sm, font_tiny = fonts
     n = len(sim.px)
 
-    # Left panel
+#some edited moments at the end
     lines = [
         f"PARTICLES  {n}/{MAX_PARTICLES}",
         f"GRAVITY    {'↓' if sim.grav_dir > 0 else '↑'} {sim.grav_str:.0f}",

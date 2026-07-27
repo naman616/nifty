@@ -18,14 +18,13 @@ Controls
 import math, sys, time
 import pygame
 
-# ── Config ────────────────────────────────────────────────────────────────────
-W, H   = 600, 600          # window size
-SCALE  = 4                 # pixel block size  (lower = sharper but slower)
+W, H   = 600, 600          
+SCALE  = 4                 
 COLS   = W // SCALE
 ROWS   = H // SCALE
 FPS    = 60
 TITLE  = "PLASMA STORM"
-
+#white on white wagom
 # ── Colour palettes (256 RGB entries each) ────────────────────────────────────
 def _pal_fire():
     p = []

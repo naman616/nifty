@@ -25,7 +25,6 @@ import numpy as np
 import pygame
 import pygame.sndarray
 
-# ── Audio ─────────────────────────────────────────────────────────────────────
 SR = 44100
 
 def _beep(freq=880, dur=0.08, vol=0.4):
@@ -34,7 +33,6 @@ def _beep(freq=880, dur=0.08, vol=0.4):
     snd  = pygame.sndarray.make_sound(wave)
     return snd
 
-# ── Workout data ──────────────────────────────────────────────────────────────
 EXERCISES = [
     {"name": "JUMPING JACKS",  "duration": 30, "emoji": "★", "kcal_rate": 8},
     {"name": "PUSH-UPS",       "duration": 30, "emoji": "▲", "kcal_rate": 7},
@@ -75,7 +73,6 @@ def draw_arc(surface, color, cx, cy, radius, thickness, start_angle, end_angle, 
 def lerp_color(c1, c2, t):
     return tuple(int(c1[i] + (c2[i] - c1[i]) * t) for i in range(3))
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     pygame.mixer.pre_init(SR, -16, 1, 256)
     pygame.init()
@@ -93,7 +90,6 @@ def main():
     font_med   = pygame.font.SysFont("monospace", 18, bold=True)
     font_sm    = pygame.font.SysFont("monospace", 13)
 
-    # ── Session state ─────────────────────────────────────────────────────────
     def make_session():
         return {
             "ex_idx":       0,
@@ -105,8 +101,8 @@ def main():
             "total_kcal":   0.0,
             "sets_done":    0,
             "last_t":       time.time(),
-            "pulse":        0.0,        # flash intensity 0-1
-            "warned":       False,      # fired 3-sec warning beep
+            "pulse":        0.0,        
+            "warned":       False,      
         }
 
     s = make_session()
@@ -212,7 +208,6 @@ def main():
         screen.blit(restart, restart.get_rect(center=(CX, H - 40)))
         pygame.display.flip()
 
-    # ── Game loop ─────────────────────────────────────────────────────────────
     while True:
         dt = clock.tick(60) / 1000.0
 
@@ -228,7 +223,7 @@ def main():
                 if ev.key == pygame.K_r:
                     s = make_session()
                 if ev.key == pygame.K_n and not s["done"] and not s["paused"]:
-                    s["time_left"] = 0   # force advance
+                    s["time_left"] = 0   
 
         if s["done"]:
             draw_summary()
@@ -240,7 +235,6 @@ def main():
             s["last_t"] = now
             s["total_elapsed"] += elapsed
 
-            # Calorie tick (only during exercise, not rest)
             if not s["is_rest"]:
                 rate = EXERCISES[s["ex_idx"]]["kcal_rate"] / 60.0
                 s["total_kcal"] += rate * elapsed
@@ -248,7 +242,6 @@ def main():
             s["time_left"] -= elapsed
             s["pulse"]      = max(0.0, s["pulse"] - dt * 4)
 
-            # 3-second warning beep
             if s["time_left"] <= 3.0 and not s["warned"]:
                 beep_tick.play()
                 s["warned"] = True
