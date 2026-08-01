@@ -70,7 +70,6 @@ def analyze_stock(company_ticker):
     print(f"📊 STOCK ANALYSIS REPORT")
     print("="*70)
     
-    # Fetch stock data
     stock, error = get_stock_data(company_ticker)
     
     if error:
@@ -86,11 +85,10 @@ def analyze_stock(company_ticker):
     print(f"🏭 Industry: {info.get('industry', 'N/A')}")
     print(f"🌍 Country: {info.get('country', 'N/A')}")
     
-    # Current Price
     current_price = info.get('currentPrice') or info.get('regularMarketPrice')
     print(f"\n💵 Current Price: ${current_price:.2f}" if current_price else "\n💵 Current Price: N/A")
     
-    # Market Cap
+    #  Cap
     market_cap = info.get('marketCap')
     if market_cap:
         print(f"📈 Market Cap: {format_large_number(market_cap)}")
