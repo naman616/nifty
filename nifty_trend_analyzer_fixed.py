@@ -23,7 +23,6 @@ import yfinance as yf
 
 warnings.filterwarnings("ignore")
 
-# ── ANSI colours ──────────────────────────────────────────────────────────────
 G, R, Y, C, B, X = "\033[92m", "\033[91m", "\033[93m", "\033[96m", "\033[1m", "\033[0m"
 
 def clr(text: str, code: str) -> str:   return f"{code}{text}{X}"
@@ -36,7 +35,6 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s │ %(message)s")
 log = logging.getLogger(__name__)
 
 
-# ── 1. Data fetch ─────────────────────────────────────────────────────────────
 def fetch_data(days: int = 120) -> pd.DataFrame:
     log.info("Downloading Nifty 50 data (%d days)…", days)
     df: pd.DataFrame = yf.download("^NSEI", period=f"{days}d", progress=False)
@@ -49,7 +47,6 @@ def fetch_data(days: int = 120) -> pd.DataFrame:
     return df
 
 
-# ── 2. Indicators (single pass) ───────────────────────────────────────────────
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     """Compute all indicators in one function — avoids repeated passes over data."""
     c, h, l, v = df["Close"], df["High"], df["Low"], df["Volume"]
@@ -90,7 +87,6 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# ── 3. Signal engine ──────────────────────────────────────────────────────────
 def _score(df: pd.DataFrame) -> dict:
     """Return a dict of individual indicator readings and a composite score."""
     row  = df.iloc[-1]
@@ -213,7 +209,6 @@ def build_analysis(df: pd.DataFrame) -> dict:
     return s
 
 
-# ── 4. Report ─────────────────────────────────────────────────────────────────
 def _fmt(label: str, val: float, w: int = 18) -> str:
     return f"  {label:<{w}} ₹{val:>12,.2f}"
 
@@ -305,8 +300,6 @@ def print_report(a: dict) -> None:
     for ln in report_lines(a):
         print(ln)
 
-
-# ── 5. Export ─────────────────────────────────────────────────────────────────
 def save_txt(a: dict, out: Path) -> Path:
     ts   = datetime.now().strftime("%Y%m%d_%H%M%S")
     path = out / f"nifty_report_{ts}.txt"
@@ -325,8 +318,6 @@ def save_csv(df: pd.DataFrame, out: Path) -> Path:
     df[cols].tail(60).to_csv(path)
     return path
 
-
-# ── 6. Entry point ────────────────────────────────────────────────────────────
 def main(days: int = 120, output_dir: Optional[str] = None) -> tuple[pd.DataFrame, dict]:
     out = Path(output_dir or ".")
     out.mkdir(parents=True, exist_ok=True)
