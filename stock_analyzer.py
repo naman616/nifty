@@ -96,8 +96,7 @@ def analyze_stock(company_ticker):
     print("\n" + "-"*70)
     print("📊 KEY FINANCIAL METRICS")
     print("-"*70)
-    
-    # 1. Revenue Growth
+
     revenue_growth, latest_revenue = calculate_revenue_growth(stock)
     print(f"\n1️⃣  REVENUE GROWTH:")
     if latest_revenue:
@@ -114,8 +113,7 @@ def analyze_stock(company_ticker):
             print(f"    ❌ Declining revenue - Negative")
     else:
         print(f"    Data not available")
-    
-    # 2. Profit Margins
+ 
     print(f"\n2️⃣  PROFIT MARGINS:")
     gross_margin = info.get('grossMargins')
     operating_margin = info.get('operatingMargins')
@@ -136,7 +134,6 @@ def analyze_stock(company_ticker):
         else:
             print(f"    ❌ Not profitable")
     
-    # 3. Debt Levels
     print(f"\n3️⃣  DEBT LEVELS:")
     debt_to_equity = info.get('debtToEquity')
     total_debt = info.get('totalDebt')
@@ -160,7 +157,6 @@ def analyze_stock(company_ticker):
         net_debt = (total_debt or 0) - total_cash
         print(f"    Net Debt: {format_large_number(net_debt)}")
     
-    # 4. Return on Equity (ROE)
     print(f"\n4️⃣  RETURN ON EQUITY (ROE):")
     roe = info.get('returnOnEquity')
     if roe is not None:
@@ -176,7 +172,6 @@ def analyze_stock(company_ticker):
     else:
         print(f"    Data not available")
     
-    # 5. P/E Ratio
     print(f"\n5️⃣  PRICE-TO-EARNINGS (P/E) RATIO:")
     pe_ratio = info.get('trailingPE') or info.get('forwardPE')
     if pe_ratio is not None:
@@ -191,8 +186,7 @@ def analyze_stock(company_ticker):
             print(f"    ❌ Very high valuation - speculative")
     else:
         print(f"    Data not available")
-    
-    # Additional Metrics
+   
     print(f"\n📌 ADDITIONAL METRICS:")
     
     beta = info.get('beta')
@@ -208,8 +202,7 @@ def analyze_stock(company_ticker):
     dividend_yield = info.get('dividendYield')
     if dividend_yield:
         print(f"    Dividend Yield: {dividend_yield*100:.2f}%")
-    
-    # 52-week range
+
     fifty_two_week_low = info.get('fiftyTwoWeekLow')
     fifty_two_week_high = info.get('fiftyTwoWeekHigh')
     if current_price and fifty_two_week_low and fifty_two_week_high:
@@ -217,7 +210,6 @@ def analyze_stock(company_ticker):
         print(f"    52-Week Range: ${fifty_two_week_low:.2f} - ${fifty_two_week_high:.2f}")
         print(f"    Current position: {range_position:.1f}% of range")
     
-    # Investment Recommendation
     print("\n" + "="*70)
     print("🎯 INVESTMENT ANALYSIS & RECOMMENDATION")
     print("="*70)
